@@ -1,15 +1,13 @@
 import './App.css';
+import Content from './Content';
+import { useState } from 'react';
 
 function App() {
+  const [show, setShow] = useState(false)
   return (
     <div className="App">
-      <input />
-      <button>Add</button>
-      <ul>
-        <li>
-          
-        </li>
-      </ul>
+      <button onClick={() => setShow(!show)}>Toggle</button>
+      {show && <Content />}
     </div>
   );
 }
