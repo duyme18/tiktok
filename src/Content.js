@@ -1,12 +1,13 @@
 import { memo, useState } from "react"
 
 
-function Content() {
-
+function Content({ onIncrease }) {
+    console.log('re-render');
     return (
-        <div>
-           <h2>Hello</h2>
-        </div>
+        <>
+            <h2>Hello</h2>
+            <button onClick={onIncrease}>Click me</button>
+        </>
     )
 }
 
