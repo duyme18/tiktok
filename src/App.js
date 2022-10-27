@@ -1,14 +1,19 @@
+import { useContext } from 'react';
+import { ThemeContext } from './ThemeContext';
 import './App.css';
 import Content from './Content';
-import { useState } from 'react';
+
+// 1. create context
+// 2. provider
+// 3. consumer
 
 function App() {
-  const [show, setShow] = useState(false)
+  const context = useContext(ThemeContext)
   return (
-    <div className="App">
-      <button onClick={() => setShow(!show)}>Toggle</button>
-      {show && <Content />}
-    </div>
+      <div className="App">
+        <button onClick={context.toggleTheme}>Toggle theme</button>
+        <Content />
+      </div>
   );
 }
 
